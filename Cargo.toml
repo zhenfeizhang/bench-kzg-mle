@@ -6,3 +6,25 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+ark-std = { version = "^0.3.0", default-features = false }
+ark-ec = { version = "^0.3.0", default-features = false }
+ark-ff = { version = "^0.3.0", default-features = false }
+ark-poly = { version = "^0.3.0", default-features = false }
+ark-poly-commit = { version = "^0.3.0", default-features = false }
+ark-serialize = { version = "^0.3.0", default-features = false, features = [ "derive" ] }
+
+ark-bn254 = { version = "0.3.0", default-features = false, features = [ "curve" ] }
+
+
+rayon = { version = "1.5.2", default-features = false }
+
+
+[features]
+default = []
+parallel = [ 
+    "ark-std/parallel", 
+    "ark-ff/parallel",  
+    "ark-poly/parallel", 
+    "ark-ec/parallel",
+    "ark-poly-commit/parallel"
+]
